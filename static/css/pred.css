@@ -1,0 +1,84 @@
+@font-face {
+  font-family: Sohne-Buch;
+  src: url(../fonts/Sohne-Buch.woff);
+}
+
+html, body, main {
+  font-family: 'Sohne-Buch', Roboto,system-ui, Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("../images/bg/14.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat; 
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(134, 119, 87);
+  animation: zoomBackground 0.5s;
+  user-select: none;
+}
+.noise::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: 0.1;  
+  z-index: 1000;
+  pointer-events: none;
+  background: url(../images/bg/Smoke.gif) center center no-repeat;
+  background-size: cover;
+}
+
+header{
+  font-size: 15px;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 0 10px; 
+}
+h1{
+  font-size: 50px;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+#home {
+  transition: left 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+#classify {
+  left: 100%;
+  transition: left 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+#about {
+  left: 100%;
+  transition: left 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Content Animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animationContent{
+  animation: scaleIn 0.5s ease forwards;
+}
+
+@keyframes zoomBackground {
+  from {
+    background-size: 110%;
+  }
+  to {
+    background-size: 100%;
+    filter: blur(1px);
+  }
+}
